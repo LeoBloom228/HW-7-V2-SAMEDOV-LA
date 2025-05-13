@@ -1,41 +1,35 @@
-//#include <iostream>
-//#include <cstddef>  
-//#include <cstring>  
-
-//task 1
-//int main() 
-//{
-    
-    //char* str = new char[256];
-
-    //std::cout << "Enter a line (a line must not exeed 255 symbols): ";
-    //std::cin.getline(str, 256);
-
-    
-    ///char* p = str;
-
-    //while (*p != '\0') 
-    //{
-        //if (*p >= '0' && *p <= '9') 
-        //{
-            //*p = 'a' + (*p - '0'); 
-        //}
-        //++p;
-    //}
-
-    //std::cout << "Results is as follows: " << str << std::endl;
-
-    //delete[] str; // Releasing memory
-
-    //return 0;
-//}
-
-//task 2
-
 #include <iostream>
 #include <cstddef>  
-#include <cstring>
+#include <cstring>  
 
+//task 1
+void task1() 
+{
+    
+    char* str = new char[256];
+
+    std::cout << "Enter a line (a line must not exeed 255 symbols): ";
+    std::cin.getline(str, 256);
+
+    
+    char* p = str;
+
+    while (*p != '\0') 
+    {
+        if (*p >= '0' && *p <= '9') 
+        {
+            *p = 'a' + (*p - '0'); 
+        }
+        ++p;
+    }
+
+    std::cout << "Results is as follows: " << str << std::endl;
+
+    delete[] str; // Releasing memory
+
+}
+
+//task 2
 // The function of removing all adjacent identical characters
 char* removeadjacentduplicates(char* str) 
 {
@@ -82,7 +76,7 @@ char* removeadjacentduplicates(char* str)
     return compressed;
 }
 
-int main() 
+void task2() 
 {
     // Allocating memory for the original string
     char* str = new char[256];
@@ -97,5 +91,13 @@ int main()
 
     delete[] str; // Releasing memory
 
+}
+
+int main()
+{
+    task1();
+    task2();
+
     return 0;
+
 }
